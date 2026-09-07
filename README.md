@@ -13,7 +13,7 @@ Choose **Flagship PS2** for raw early-2000s game graphics, or **Late-Z Battle Ce
 
 ## Install in ChatGPT
 
-1. Download [mensa-community-engine.zip](https://nosimaj.com/tools/downloads/mensa-community-engine.zip). **Do not unzip it.**
+1. Download [mensa-community-engine.zip](https://github.com/nosimajtechnology/mensa-community-engine/releases/latest/download/mensa-community-engine.zip). **Do not unzip it.**
 2. In ChatGPT, open **Plugins**, then **Skills**, and choose **Create / Upload**. Select the ZIP. If your app does not show uploading, use ChatGPT in a browser.
 3. Open a chat and ask it to load **Mensa Community Engine**.
 
@@ -93,4 +93,4 @@ Created by **Nosimaj Media**, using the updated Knightcore Community Engine arch
 
 Mensa community meme. This is a community creative tool, not a trading tool or an official endorsement from Ansem or Mensa International. The Engine does not automatically add tickers, charts, or token promotion. See [LICENSE](LICENSE) for instruction permissions and third-party asset boundaries.
 
-Maintainers: this source repository is private. The tools page serves the install ZIP directly, so visitors do not need GitHub access. Tagged releases attach the same stable `mensa-community-engine.zip` filename plus `SHA256SUMS` for maintainers. Keep the public download synchronized when shipping updates.
+This repository is public. The [latest release](https://github.com/nosimajtechnology/mensa-community-engine/releases/latest) includes the ready-to-install `mensa-community-engine.zip` and a checksum. The download link above always follows the latest release.

@@ -6,6 +6,8 @@ Inherited architecture: installed Knightcore v1.2.2, Late-Z v1.3, latest H3 stag
 
 Images are preserved unchanged. `assets/manifest.json` pins their SHA-256. The web card can use a web-optimized derivative; this does not replace canonical sheets.
 
-Run `python3 scripts/build_release.py` and `python3 scripts/validate_acceptance.py`. Tags matching v* must match the manifest version. Release automation attaches the stable ZIP and checksum. The private GitHub release is for maintainers; public installation uses the ZIP served by nosimaj-web at `/tools/downloads/mensa-community-engine.zip`.
+Run `python3 scripts/build_release.py` and `python3 scripts/validate_acceptance.py`. The public GitHub release contains the stable `mensa-community-engine.zip` and `SHA256SUMS`. The README and tools catalog use `releases/latest/download/mensa-community-engine.zip`.
 
-For an update: revise canonical source and version, validate/build, update public website ZIP/checksum in the same release window, then tag the matching engine version. Never change repository visibility to fix a public download.
+For an update: revise canonical source and all version declarations, validate/build, and merge to main. Changes to the package, scripts, changelog, or release workflow run release automation. A matching v* tag or a manual run on main also works. The workflow validates and builds before publishing, and creates a version tag at the build commit. Assets are uploaded to a draft before publication. Existing version assets must match byte-for-byte; changed packages require a new version instead of overwriting a release. No repository visibility changes are part of this workflow.
+
+The older `/tools/downloads/mensa-community-engine.zip` site URL remains a v1.0.0 compatibility download. New installations use GitHub's latest release, so future updates do not require a website ZIP copy.
