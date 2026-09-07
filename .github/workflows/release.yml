@@ -1,0 +1,26 @@
+name: release
+on:
+  push:
+    tags: ["v*"]
+permissions:
+  contents: write
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate version and build
+        run: |
+          python3 scripts/build_release.py --tag "$GITHUB_REF_NAME"
+          python3 scripts/validate_acceptance.py
+          cd dist
+          sha256sum -c SHA256SUMS
+      - name: Attach stable ZIP and checksum
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if gh release view "$GITHUB_REF_NAME" >/dev/null 2>&1; then
+            gh release upload "$GITHUB_REF_NAME" dist/mensa-community-engine.zip dist/SHA256SUMS --clobber
+          else
+            gh release create "$GITHUB_REF_NAME" dist/mensa-community-engine.zip dist/SHA256SUMS --title "Mensa Community Engine $GITHUB_REF_NAME" --generate-notes
+          fi

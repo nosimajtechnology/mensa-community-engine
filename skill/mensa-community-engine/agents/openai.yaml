@@ -1,0 +1,4 @@
+interface:
+  display_name: "Mensa Community Engine"
+  short_description: "Create Mensa scenes in PS2 and Late-Z styles"
+  default_prompt: "Use $mensa-community-engine to create a scene featuring Mensa."
